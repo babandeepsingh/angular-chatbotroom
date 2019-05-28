@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="header">
+		<h1>The intelligent bot</h1>
+	</div>
+	<div class="chat-box" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+		<ng-container *ngFor="let message of messages | async">
+			<!-- <div class="message" [ngClass]="{ 'from': message.sendBy === 'bot','to': message.sendBy === 'user'}">
+    {{message.content}}
+  </div> -->
+			<div *ngIf="message.sendBy === 'user'" class="message user">
+				{{message.content}}
+			</div>
+			<div *ngIf="message.sendBy === 'bot'" class="message bot">
+				{{message.content}}
+			</div>
+		</ng-container>
+	</div>
+	<div class="input">
+		<label for="nameField">Your Message</label>
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
+<button (click)="sendMessage()">send</button>
+</div>
+</div>
