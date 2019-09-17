@@ -10,8 +10,10 @@ export class Message{
 @Injectable()
 export class MainService {
 dialogFlow={
-  ClientAccessToken:'c543defd08c14cb9bb27b4b2c782b39e',
-  DeveloperAccessToken: '2729ce8c55774d10914bc7ada1e6628d'
+  // ClientAccessToken:'c543defd08c14cb9bb27b4b2c782b39e',
+  // DeveloperAccessToken: '2729ce8c55774d10914bc7ada1e6628d'
+   ClientAccessToken:'70f53700558b4e5fb44a3283b04876f1',
+  DeveloperAccessToken: '2b5b05a4160e43ec9d9010b27111ce5c'
 };
   readonly token = this.dialogFlow.ClientAccessToken;
   readonly client = new ApiAiClient({accessToken: this.token});
